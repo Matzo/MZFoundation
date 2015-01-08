@@ -9,10 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var tableView:MZTableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.tableView.bindItem("aaaa", toCell: TableViewCell.classForCoder())
+        self.tableView.bindItem("aaaa", toCell: TableViewCell.classForCoder())
+        self.tableView.bindItem("aaaa", toCell: TableViewCell.classForCoder())
+        self.tableView.bindItem("aaaa", toCell: TableViewCell.classForCoder())
     }
 
     override func didReceiveMemoryWarning() {

@@ -122,12 +122,11 @@
         [self.editableSections addObject:newSection];
         [newSection bindItem:item toCell:cellClass];
     }
-    
-    UINib *nib = [UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil];
-    if (nib) {
+
+    NSString *nibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(cellClass) ofType:@"nib"];
+    if (nibPath) {
+        UINib *nib = [UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil];
         [self registerNib:nib forCellReuseIdentifier:NSStringFromClass(cellClass)];
-    } else {
-        [self registerClass:cellClass forCellReuseIdentifier:NSStringFromClass(cellClass)];
     }
 }
 

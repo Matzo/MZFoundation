@@ -17,6 +17,7 @@
 		F7CB41441A5EC94F00C1E9C9 /* MZTableViewSection.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CB41431A5EC94F00C1E9C9 /* MZTableViewSection.m */; };
 		F7CB41471A5EC98A00C1E9C9 /* MZTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CB41461A5EC98A00C1E9C9 /* MZTableViewRow.m */; };
 		F7E2AA9E1A5ECBCD0010296B /* MZView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AA9D1A5ECBCD0010296B /* MZView.m */; };
+		F7E2AAA01A5EF8580010296B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F7CB41461A5EC98A00C1E9C9 /* MZTableViewRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTableViewRow.m; sourceTree = "<group>"; };
 		F7E2AA9C1A5ECBCD0010296B /* MZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZView.h; sourceTree = "<group>"; };
 		F7E2AA9D1A5ECBCD0010296B /* MZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZView.m; sourceTree = "<group>"; };
+		F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				F7CB413D1A5EC7F700C1E9C9 /* MZFoundation-Bridging-Header.h */,
 				F7CB411C1A5EC24000C1E9C9 /* AppDelegate.swift */,
 				F7CB411E1A5EC24000C1E9C9 /* ViewController.swift */,
+				F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */,
 				F7CB41201A5EC24000C1E9C9 /* Main.storyboard */,
 				F7CB41231A5EC24000C1E9C9 /* Images.xcassets */,
 				F7CB41251A5EC24000C1E9C9 /* LaunchScreen.xib */,
@@ -248,6 +251,7 @@
 				F7CB41401A5EC7F700C1E9C9 /* MZTableView.m in Sources */,
 				F7CB41441A5EC94F00C1E9C9 /* MZTableViewSection.m in Sources */,
 				F7CB411D1A5EC24000C1E9C9 /* AppDelegate.swift in Sources */,
+				F7E2AAA01A5EF8580010296B /* TableViewCell.swift in Sources */,
 				F7E2AA9E1A5ECBCD0010296B /* MZView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +379,7 @@
 				INFOPLIST_FILE = MZFoundation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MZFoundation/MZFoundation-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MZFoundation/MZFoundation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -388,7 +392,7 @@
 				INFOPLIST_FILE = MZFoundation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "MZFoundation/MZFoundation-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MZFoundation/MZFoundation-Bridging-Header.h";
 			};
 			name = Release;
 		};
