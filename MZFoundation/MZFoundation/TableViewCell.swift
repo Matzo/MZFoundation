@@ -22,7 +22,15 @@ class TableViewCell: UITableViewCell, MZTableViewCellProtocol {
 
         // Configure the view for the selected state
     }
+    
+    // MZTableViewCellProtocol
+    class func heightForItem(item: AnyObject!, withTableView tableView: MZTableView!, indexPath: NSIndexPath!) -> CGFloat {
+        var titleString:String = item as String
+        var height:CGFloat = 44.0 + CGFloat(indexPath.row) * 20.0
+        return height
+    }
 
+    
     func setItem(item: AnyObject!, withTableView tableView: MZTableView!, indexPath: NSIndexPath!) {
         self.title = item as String
         

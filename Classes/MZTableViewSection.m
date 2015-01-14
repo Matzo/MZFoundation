@@ -8,6 +8,7 @@
 
 #import "MZTableViewSection.h"
 #import "MZTableViewRow.h"
+#import "NSObject+MZFoundation.h"
 
 @interface MZTableViewSection ()
 @property (nonatomic, strong) NSMutableArray *editableRows;
@@ -39,9 +40,13 @@
 }
 
 - (void)bindItem:(id)item toCell:(Class)cellClass {
+    [self bindItem:item toIdentifier:[cellClass mz_className]];
+}
+
+- (void)bindItem:(id)item toIdentifier:(NSString*)identifier {
     MZTableViewRow *row = [[MZTableViewRow alloc] init];
     row.item = item;
-    row.cellClass = cellClass;
+    row.identifier = identifier;
     
     [self.editableRows addObject:row];
 }

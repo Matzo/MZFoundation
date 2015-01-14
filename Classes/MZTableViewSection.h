@@ -12,6 +12,7 @@
 @property (nonatomic, strong, readonly) NSArray *rows;
 
 - (void)bindItem:(id)item toCell:(Class)cellClass;
+- (void)bindItem:(id)item toIdentifier:(NSString*)identifier;
 - (void)unbindItem:(id)item;
 - (void)unbindItemAtIndex:(NSInteger)index;
 

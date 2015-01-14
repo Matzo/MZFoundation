@@ -9,6 +9,7 @@
 #import "MZTableView.h"
 #import "MZTableViewSection.h"
 #import "MZTableViewRow.h"
+#import "NSObject+MZFoundation.h"
 
 @interface MZTableView() <
     UITableViewDataSource,
@@ -61,7 +62,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
     MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(row.cellClass)];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:row.identifier];
 
     if ([cell respondsToSelector:@selector(setItem:withTableView:indexPath:)]) {
         id mz_cell = (id<MZTableViewCellProtocol>)cell;
@@ -82,8 +83,9 @@
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
     MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
-    if ([(Class)row.cellClass respondsToSelector:@selector(estimatedHeightForItem:withTableView:indexPath:)]) {
-        Class<MZTableViewCellProtocol> mz_class = row.cellClass;
+    Class clazz = NSClassFromString(row.identifier);
+    if (clazz && [clazz respondsToSelector:@selector(estimatedHeightForItem:withTableView:indexPath:)]) {
+        Class<MZTableViewCellProtocol> mz_class = clazz;
         return [mz_class estimatedHeightForItem:row.item withTableView:self indexPath:indexPath];
     }
     return UITableViewAutomaticDimension;
@@ -92,8 +94,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
     MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
-    if ([(Class)row.cellClass respondsToSelector:@selector(heightForItem:withTableView:indexPath:)]) {
-        Class<MZTableViewCellProtocol> mz_class = row.cellClass;
+    Class clazz = NSClassFromString(row.identifier);
+    if (clazz && [clazz respondsToSelector:@selector(heightForItem:withTableView:indexPath:)]) {
+        Class<MZTableViewCellProtocol> mz_class = clazz;
         return [mz_class heightForItem:row.item withTableView:self indexPath:indexPath];
     }
     return UITableViewAutomaticDimension;
@@ -114,21 +117,26 @@
 }
 
 - (void)bindItem:(id)item toCell:(Class)cellClass {
+    [self bindItem:item toIdentifier:[cellClass mz_className]];
+}
+
+- (void)bindItem:(id)item toIdentifier:(NSString*)identifier {
     if (0 < self.editableSections.count) {
         MZTableViewSection *lastSection = self.editableSections.lastObject;
-        [lastSection bindItem:item toCell:cellClass];
+        [lastSection bindItem:item toIdentifier:identifier];
     } else {
         MZTableViewSection *newSection = [[MZTableViewSection alloc] init];
         [self.editableSections addObject:newSection];
-        [newSection bindItem:item toCell:cellClass];
+        [newSection bindItem:item toIdentifier:identifier];
     }
-
-    NSString *nibPath = [[NSBundle mainBundle] pathForResource:NSStringFromClass(cellClass) ofType:@"nib"];
+    
+    NSString *nibPath = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
     if (nibPath) {
-        UINib *nib = [UINib nibWithNibName:NSStringFromClass(cellClass) bundle:nil];
-        [self registerNib:nib forCellReuseIdentifier:NSStringFromClass(cellClass)];
+        UINib *nib = [UINib nibWithNibName:identifier bundle:nil];
+        [self registerNib:nib forCellReuseIdentifier:identifier];
     }
 }
+
 
 - (void)unbindItem:(id)item {
     MZTableViewSection *lastSection = self.editableSections.lastObject;
@@ -138,6 +146,10 @@
 - (void)unbindItemAtIndexPath:(NSIndexPath*)indexPath {
     MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
     [section unbindItemAtIndex:indexPath.row];
+}
+
+- (void)addSection:(MZTableViewSection*)section {
+    [self.editableSections addObject:section];
 }
 
 @end

@@ -18,6 +18,10 @@
 		F7CB41471A5EC98A00C1E9C9 /* MZTableViewRow.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CB41461A5EC98A00C1E9C9 /* MZTableViewRow.m */; };
 		F7E2AA9E1A5ECBCD0010296B /* MZView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AA9D1A5ECBCD0010296B /* MZView.m */; };
 		F7E2AAA01A5EF8580010296B /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */; };
+		F7E2AAA31A6408E80010296B /* TableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7E2AAA11A6408E80010296B /* TableViewCell2.xib */; };
+		F7E2AAA51A6409000010296B /* TableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AAA41A6409000010296B /* TableViewCell2.swift */; };
+		F7E2AAA81A640D840010296B /* MZMiniFloatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AAA71A640D840010296B /* MZMiniFloatingViewController.m */; };
+		F7E2AB101A66C6EC0010296B /* NSObject+MZFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E2AB0F1A66C6EC0010296B /* NSObject+MZFoundation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		F7E2AA9C1A5ECBCD0010296B /* MZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZView.h; sourceTree = "<group>"; };
 		F7E2AA9D1A5ECBCD0010296B /* MZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZView.m; sourceTree = "<group>"; };
 		F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F7E2AAA21A6408E80010296B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TableViewCell2.xib; sourceTree = "<group>"; };
+		F7E2AAA41A6409000010296B /* TableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell2.swift; sourceTree = "<group>"; };
+		F7E2AAA61A640D840010296B /* MZMiniFloatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZMiniFloatingViewController.h; sourceTree = "<group>"; };
+		F7E2AAA71A640D840010296B /* MZMiniFloatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZMiniFloatingViewController.m; sourceTree = "<group>"; };
+		F7E2AB0E1A66C6EC0010296B /* NSObject+MZFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MZFoundation.h"; sourceTree = "<group>"; };
+		F7E2AB0F1A66C6EC0010296B /* NSObject+MZFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MZFoundation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,8 @@
 				F7CB411C1A5EC24000C1E9C9 /* AppDelegate.swift */,
 				F7CB411E1A5EC24000C1E9C9 /* ViewController.swift */,
 				F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */,
+				F7E2AAA41A6409000010296B /* TableViewCell2.swift */,
+				F7E2AAA11A6408E80010296B /* TableViewCell2.xib */,
 				F7CB41201A5EC24000C1E9C9 /* Main.storyboard */,
 				F7CB41231A5EC24000C1E9C9 /* Images.xcassets */,
 				F7CB41251A5EC24000C1E9C9 /* LaunchScreen.xib */,
@@ -139,11 +151,23 @@
 				F7CB41431A5EC94F00C1E9C9 /* MZTableViewSection.m */,
 				F7CB41451A5EC98A00C1E9C9 /* MZTableViewRow.h */,
 				F7CB41461A5EC98A00C1E9C9 /* MZTableViewRow.m */,
+				F7E2AAA61A640D840010296B /* MZMiniFloatingViewController.h */,
+				F7E2AAA71A640D840010296B /* MZMiniFloatingViewController.m */,
 				F7E2AA9C1A5ECBCD0010296B /* MZView.h */,
 				F7E2AA9D1A5ECBCD0010296B /* MZView.m */,
+				F7E2AB0D1A66C6CD0010296B /* Categories */,
 			);
 			name = Classes;
 			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		F7E2AB0D1A66C6CD0010296B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F7E2AB0E1A66C6EC0010296B /* NSObject+MZFoundation.h */,
+				F7E2AB0F1A66C6EC0010296B /* NSObject+MZFoundation.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E2AAA31A6408E80010296B /* TableViewCell2.xib in Resources */,
 				F7CB41221A5EC24000C1E9C9 /* Main.storyboard in Resources */,
 				F7CB41271A5EC24000C1E9C9 /* LaunchScreen.xib in Resources */,
 				F7CB41241A5EC24000C1E9C9 /* Images.xcassets in Resources */,
@@ -248,8 +273,11 @@
 			files = (
 				F7CB411F1A5EC24000C1E9C9 /* ViewController.swift in Sources */,
 				F7CB41471A5EC98A00C1E9C9 /* MZTableViewRow.m in Sources */,
+				F7E2AB101A66C6EC0010296B /* NSObject+MZFoundation.m in Sources */,
+				F7E2AAA81A640D840010296B /* MZMiniFloatingViewController.m in Sources */,
 				F7CB41401A5EC7F700C1E9C9 /* MZTableView.m in Sources */,
 				F7CB41441A5EC94F00C1E9C9 /* MZTableViewSection.m in Sources */,
+				F7E2AAA51A6409000010296B /* TableViewCell2.swift in Sources */,
 				F7CB411D1A5EC24000C1E9C9 /* AppDelegate.swift in Sources */,
 				F7E2AAA01A5EF8580010296B /* TableViewCell.swift in Sources */,
 				F7E2AA9E1A5ECBCD0010296B /* MZView.m in Sources */,
@@ -289,6 +317,14 @@
 				F7CB41261A5EC24000C1E9C9 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		F7E2AAA11A6408E80010296B /* TableViewCell2.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7E2AAA21A6408E80010296B /* Base */,
+			);
+			name = TableViewCell2.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

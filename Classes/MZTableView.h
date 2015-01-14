@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class MZTableView;
+@class MZTableViewSection;
 
 @protocol MZTableViewDelegate <NSObject>
 - (void)tableView:(MZTableView*)tableView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
@@ -29,8 +30,11 @@
 
 - (id)itemAtIndexPath:(NSIndexPath*)indexPath;
 - (void)bindItem:(id)item toCell:(Class)cellClass;
+- (void)bindItem:(id)item toIdentifier:(NSString*)identifier;
 - (void)unbindItem:(id)item;
 - (void)unbindItemAtIndexPath:(NSIndexPath*)indexPath;
+
+- (void)addSection:(MZTableViewSection*)section;
 
 @end
 

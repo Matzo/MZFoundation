@@ -11,5 +11,5 @@
 @interface MZTableViewRow : NSObject
 @property (nonatomic, strong) id item;
 @property (nonatomic, assign) BOOL isFirstDisplay;
-@property (nonatomic, strong) Class cellClass;
+@property (nonatomic, copy) NSString *identifier;
 @end
