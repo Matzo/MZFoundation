@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MZFoundation"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A short description of MZFoundation."
 
 #  s.description  = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.ios.deployment_target = "7.0"
   # s.osx.deployment_target = "10.7"
-  s.source       = { :git => "https://github.com/Matzo/MZFoundation.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/Matzo/MZFoundation.git", :tag => s.version }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
 #  s.exclude_files = "Classes/Exclude"
   s.public_header_files = "Classes/**/*.h"
