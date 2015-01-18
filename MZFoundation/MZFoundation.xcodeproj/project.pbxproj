@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7AF5CCB1A66D2D00045D971 /* MZMiniFloatingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7AF5CCA1A66D2D00045D971 /* MZMiniFloatingViewController.storyboard */; };
+		F7AF5CCF1A66D3EC0045D971 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF5CCE1A66D3EC0045D971 /* ContainerViewController.swift */; };
 		F7CB411D1A5EC24000C1E9C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB411C1A5EC24000C1E9C9 /* AppDelegate.swift */; };
 		F7CB411F1A5EC24000C1E9C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB411E1A5EC24000C1E9C9 /* ViewController.swift */; };
 		F7CB41221A5EC24000C1E9C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7CB41201A5EC24000C1E9C9 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7AF5CCA1A66D2D00045D971 /* MZMiniFloatingViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MZMiniFloatingViewController.storyboard; sourceTree = "<group>"; };
+		F7AF5CCE1A66D3EC0045D971 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		F7CB41171A5EC24000C1E9C9 /* MZFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MZFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7CB411B1A5EC24000C1E9C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7CB411C1A5EC24000C1E9C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				F7CB411E1A5EC24000C1E9C9 /* ViewController.swift */,
 				F7E2AA9F1A5EF8580010296B /* TableViewCell.swift */,
 				F7E2AAA41A6409000010296B /* TableViewCell2.swift */,
+				F7AF5CCE1A66D3EC0045D971 /* ContainerViewController.swift */,
 				F7E2AAA11A6408E80010296B /* TableViewCell2.xib */,
 				F7CB41201A5EC24000C1E9C9 /* Main.storyboard */,
 				F7CB41231A5EC24000C1E9C9 /* Images.xcassets */,
@@ -156,6 +161,7 @@
 				F7E2AA9C1A5ECBCD0010296B /* MZView.h */,
 				F7E2AA9D1A5ECBCD0010296B /* MZView.m */,
 				F7E2AB0D1A66C6CD0010296B /* Categories */,
+				F7AF5CCA1A66D2D00045D971 /* MZMiniFloatingViewController.storyboard */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -253,6 +259,7 @@
 				F7E2AAA31A6408E80010296B /* TableViewCell2.xib in Resources */,
 				F7CB41221A5EC24000C1E9C9 /* Main.storyboard in Resources */,
 				F7CB41271A5EC24000C1E9C9 /* LaunchScreen.xib in Resources */,
+				F7AF5CCB1A66D2D00045D971 /* MZMiniFloatingViewController.storyboard in Resources */,
 				F7CB41241A5EC24000C1E9C9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +281,7 @@
 				F7CB411F1A5EC24000C1E9C9 /* ViewController.swift in Sources */,
 				F7CB41471A5EC98A00C1E9C9 /* MZTableViewRow.m in Sources */,
 				F7E2AB101A66C6EC0010296B /* NSObject+MZFoundation.m in Sources */,
+				F7AF5CCF1A66D3EC0045D971 /* ContainerViewController.swift in Sources */,
 				F7E2AAA81A640D840010296B /* MZMiniFloatingViewController.m in Sources */,
 				F7CB41401A5EC7F700C1E9C9 /* MZTableView.m in Sources */,
 				F7CB41441A5EC94F00C1E9C9 /* MZTableViewSection.m in Sources */,

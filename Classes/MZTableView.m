@@ -80,21 +80,26 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
-    MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
-    Class clazz = NSClassFromString(row.identifier);
-    if (clazz && [clazz respondsToSelector:@selector(estimatedHeightForItem:withTableView:indexPath:)]) {
-        Class<MZTableViewCellProtocol> mz_class = clazz;
-        return [mz_class estimatedHeightForItem:row.item withTableView:self indexPath:indexPath];
-    }
-    return UITableViewAutomaticDimension;
-}
+// iOS7 doesn't work correctly if this method was defined.
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
+//    MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
+//    Class clazz = NSClassFromString(row.identifier);
+//    if (clazz && [clazz respondsToSelector:@selector(estimatedHeightForItem:withTableView:indexPath:)]) {
+//        Class<MZTableViewCellProtocol> mz_class = clazz;
+//        return [mz_class estimatedHeightForItem:row.item withTableView:self indexPath:indexPath];
+//    }
+//    return UITableViewAutomaticDimension;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     MZTableViewSection *section = [self.editableSections objectAtIndex:indexPath.section];
     MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
     Class clazz = NSClassFromString(row.identifier);
+    if (!clazz) {
+        NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
+        clazz = NSClassFromString([NSString stringWithFormat:@"%@.%@", bundleName, row.identifier]);
+    }
     if (clazz && [clazz respondsToSelector:@selector(heightForItem:withTableView:indexPath:)]) {
         Class<MZTableViewCellProtocol> mz_class = clazz;
         return [mz_class heightForItem:row.item withTableView:self indexPath:indexPath];
