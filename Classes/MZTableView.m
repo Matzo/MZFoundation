@@ -97,7 +97,7 @@
     MZTableViewRow *row = [section.rows objectAtIndex:indexPath.row];
     Class clazz = NSClassFromString(row.identifier);
     if (!clazz) {
-        NSString *bundleName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
+        NSString *bundleName = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"] stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
         clazz = NSClassFromString([NSString stringWithFormat:@"%@.%@", bundleName, row.identifier]);
     }
     if (clazz && [clazz respondsToSelector:@selector(heightForItem:withTableView:indexPath:)]) {
